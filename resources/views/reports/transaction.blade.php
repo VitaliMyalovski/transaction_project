@@ -17,6 +17,7 @@
                 let cityOfRegistration = document.getElementById("city_of_registration").value;
                 if (!name || !country || !cityOfRegistration) {
                     alert('Поля Имя/Страна/Город регистрации обязательны для заполнения');
+                    return;
                 }
                 axios({
                     method: 'post',
@@ -38,7 +39,8 @@
                         appendRow(tableData);
                     }
                 ).catch(function (error) {
-                    alert('Произошла ошибка')
+                    alert('Произошла ошибка');
+                    return;
                 });
             });
 
@@ -51,6 +53,7 @@
                 let cityOfRegistration = document.getElementById("city_of_registration").value;
                 if (!name || !country || !cityOfRegistration) {
                     alert('Поля Имя/Страна/Город регистрации обязательны для заполнения');
+                    return;
                 }
 
                 axios({
