@@ -1,0 +1,195 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateNssCurrenciesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::dropIfExists('nss_currencies');
+        Schema::create('nss_currencies', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 60);
+            $table->string('character', 3);
+            $table->unsignedSmallInteger('code');
+        });
+
+        DB::table('nss_currencies')->insert([
+                ['name' => 'Ариари', 'character' => 'MGA', 'code' => 969],
+                ['name' => 'Афгани', 'character' => 'AFN', 'code' => 971],
+                ['name' => 'Бальбоа', 'character' => 'PAB', 'code' => 590],
+                ['name' => 'Бат', 'character' => 'THB', 'code' => 764],
+                ['name' => 'Боливар фуэрте', 'character' => 'VEF', 'code' => 937],
+                ['name' => 'Боливиано', 'character' => 'BOB', 'code' => 68],
+                ['name' => 'Быр', 'character' => 'ETB', 'code' => 230],
+                ['name' => 'Вату', 'character' => 'VUV', 'code' => 548],
+                ['name' => 'Вона', 'character' => 'KPW', 'code' => 408],
+                ['name' => 'Вона', 'character' => 'KRW', 'code' => 410],
+                ['name' => 'Гривна', 'character' => 'UAH', 'code' => 980],
+                ['name' => 'Гуарани', 'character' => 'PYG', 'code' => 600],
+                ['name' => 'Гульден', 'character' => 'ANG', 'code' => 532],
+                ['name' => 'Гурд', 'character' => 'HTG', 'code' => 332],
+                ['name' => 'Даласи', 'character' => 'GMD', 'code' => 270],
+                ['name' => 'Денар', 'character' => 'MKD', 'code' => 807],
+                ['name' => 'Динар', 'character' => 'DZD', 'code' => 12],
+                ['name' => 'Динар', 'character' => 'BHD', 'code' => 48],
+                ['name' => 'Динар', 'character' => 'JOD', 'code' => 400],
+                ['name' => 'Динар', 'character' => 'IQD', 'code' => 368],
+                ['name' => 'Динар', 'character' => 'KWD', 'code' => 414],
+                ['name' => 'Динар', 'character' => 'LYD', 'code' => 434],
+                ['name' => 'Динар', 'character' => 'RSD', 'code' => 941],
+                ['name' => 'Динар', 'character' => 'TND', 'code' => 788],
+                ['name' => 'Дирхам', 'character' => 'MAD', 'code' => 504],
+                ['name' => 'Дирхам', 'character' => 'AED', 'code' => 784],
+                ['name' => 'Добра', 'character' => 'STN', 'code' => 930],
+                ['name' => 'Доллар', 'character' => 'AUD', 'code' => 36],
+                ['name' => 'Доллар', 'character' => 'BSD', 'code' => 44],
+                ['name' => 'Доллар', 'character' => 'BBD', 'code' => 52],
+                ['name' => 'Доллар', 'character' => 'BZD', 'code' => 84],
+                ['name' => 'Доллар', 'character' => 'BMD', 'code' => 60],
+                ['name' => 'Доллар', 'character' => 'BND', 'code' => 96],
+                ['name' => 'Доллар', 'character' => 'XCD', 'code' => 951],
+                ['name' => 'Доллар', 'character' => 'GYD', 'code' => 328],
+                ['name' => 'Доллар', 'character' => 'HKD', 'code' => 344],
+                ['name' => 'Доллар', 'character' => 'ZWD', 'code' => 932],
+                ['name' => 'Доллар', 'character' => 'KYD', 'code' => 136],
+                ['name' => 'Доллар', 'character' => 'CAD', 'code' => 124],
+                ['name' => 'Доллар', 'character' => 'LRD', 'code' => 430],
+                ['name' => 'Доллар', 'character' => 'NAD', 'code' => 516],
+                ['name' => 'Доллар', 'character' => 'NZD', 'code' => 554],
+                ['name' => 'Доллар', 'character' => 'SGD', 'code' => 702],
+                ['name' => 'Доллар', 'character' => 'SBD', 'code' => 90],
+                ['name' => 'Доллар', 'character' => 'USD', 'code' => 840],
+                ['name' => 'Доллар', 'character' => 'SRD', 'code' => 968],
+                ['name' => 'Доллар новый', 'character' => 'TWD', 'code' => 901],
+                ['name' => 'Доллар', 'character' => 'TTD', 'code' => 780],
+                ['name' => 'Доллар', 'character' => 'FJD', 'code' => 242],
+                ['name' => 'Доллар', 'character' => 'JMD', 'code' => 388],
+                ['name' => 'Донг', 'character' => 'VND', 'code' => 704],
+                ['name' => 'Драм', 'character' => 'AMD', 'code' => 51],
+                ['name' => 'Евро', 'character' => 'EUR', 'code' => 978],
+                ['name' => 'Злотый', 'character' => 'PLN', 'code' => 985],
+                ['name' => 'Иена', 'character' => 'JPY', 'code' => 392],
+                ['name' => 'Кванза', 'character' => 'AOA', 'code' => 973],
+                ['name' => 'Квача', 'character' => 'ZMK', 'code' => 894],
+                ['name' => 'Квача', 'character' => 'MWK', 'code' => 454],
+                ['name' => 'Кетсаль', 'character' => 'GTQ', 'code' => 320],
+                ['name' => 'Кина', 'character' => 'PGK', 'code' => 598],
+                ['name' => 'Кип', 'character' => 'LAK', 'code' => 418],
+                ['name' => 'Колон', 'character' => 'CRC', 'code' => 188],
+                ['name' => 'Кордоба', 'character' => 'NIO', 'code' => 558],
+                ['name' => 'Крона', 'character' => 'DKK', 'code' => 208],
+                ['name' => 'Крона', 'character' => 'ISK', 'code' => 352],
+                ['name' => 'Крона', 'character' => 'NOK', 'code' => 578],
+                ['name' => 'Крона', 'character' => 'CZK', 'code' => 203],
+                ['name' => 'Крона', 'character' => 'SEK', 'code' => 752],
+                ['name' => 'Куна', 'character' => 'HRK', 'code' => 191],
+                ['name' => 'Кьят', 'character' => 'MMK', 'code' => 104],
+                ['name' => 'Лари', 'character' => 'GEL', 'code' => 981],
+                ['name' => 'Лат', 'character' => 'LVL', 'code' => 428],
+                ['name' => 'Лев', 'character' => 'BGN', 'code' => 975],
+                ['name' => 'Лей', 'character' => 'MDL', 'code' => 498],
+                ['name' => 'Лей новый', 'character' => 'RON', 'code' => 946],
+                ['name' => 'Лек', 'character' => 'ALL', 'code' => 8],
+                ['name' => 'Лемпира', 'character' => 'HNL', 'code' => 340],
+                ['name' => 'Леоне', 'character' => 'SLL', 'code' => 694],
+                ['name' => 'Лилангени', 'character' => 'SZL', 'code' => 748],
+                ['name' => 'Лира', 'character' => 'TRY', 'code' => 949],
+                ['name' => 'Лит', 'character' => 'LTL', 'code' => 440],
+                ['name' => 'Лоти', 'character' => 'LSL', 'code' => 426],
+                ['name' => 'Манат', 'character' => 'AZN', 'code' => 944],
+                ['name' => 'Манат', 'character' => 'TMТ', 'code' => 934],
+                ['name' => 'Марка конвертируемая', 'character' => 'BAM', 'code' => 977],
+                ['name' => 'Метикал', 'character' => 'MZN', 'code' => 943],
+                ['name' => 'Найра', 'character' => 'NGN', 'code' => 566],
+                ['name' => 'Накфа', 'character' => 'ERN', 'code' => 232],
+                ['name' => 'Нгултрум', 'character' => 'BTN', 'code' => 64],
+                ['name' => 'Паанга', 'character' => 'TOP', 'code' => 776],
+                ['name' => 'Патака', 'character' => 'MOP', 'code' => 446],
+                ['name' => 'Песо', 'character' => 'ARS', 'code' => 32],
+                ['name' => 'Песо', 'character' => 'DOP', 'code' => 214],
+                ['name' => 'Песо', 'character' => 'COP', 'code' => 170],
+                ['name' => 'Песо', 'character' => 'CUP', 'code' => 192],
+                ['name' => 'Песо', 'character' => 'MXN', 'code' => 484],
+                ['name' => 'Песо', 'character' => 'UYU', 'code' => 858],
+                ['name' => 'Песо', 'character' => 'PHP', 'code' => 608],
+                ['name' => 'Песо', 'character' => 'CLP', 'code' => 152],
+                ['name' => 'Пула', 'character' => 'BWP', 'code' => 72],
+                ['name' => 'Реал', 'character' => 'BRL', 'code' => 986],
+                ['name' => 'Риал', 'character' => 'IRR', 'code' => 364],
+                ['name' => 'Риал', 'character' => 'YER', 'code' => 886],
+                ['name' => 'Риал', 'character' => 'QAR', 'code' => 634],
+                ['name' => 'Риал', 'character' => 'OMR', 'code' => 512],
+                ['name' => 'Риель', 'character' => 'KHR', 'code' => 116],
+                ['name' => 'Ринггит', 'character' => 'MYR', 'code' => 458],
+                ['name' => 'Риял', 'character' => 'SAR', 'code' => 682],
+                ['name' => 'Рубль', 'character' => 'BYR', 'code' => 974],
+                ['name' => 'Рубль', 'character' => 'BYN', 'code' => 933],
+                ['name' => 'Рубль', 'character' => 'RUB', 'code' => 643],
+                ['name' => 'Рупия', 'character' => 'INR', 'code' => 356],
+                ['name' => 'Рупия', 'character' => 'IDR', 'code' => 360],
+                ['name' => 'Рупия', 'character' => 'MUR', 'code' => 480],
+                ['name' => 'Рупия', 'character' => 'NPR', 'code' => 524],
+                ['name' => 'Рупия', 'character' => 'PKR', 'code' => 586],
+                ['name' => 'Рупия', 'character' => 'SCR', 'code' => 690],
+                ['name' => 'Рупия', 'character' => 'LKR', 'code' => 144],
+                ['name' => 'Руфия', 'character' => 'MVR', 'code' => 462],
+                ['name' => 'Рэнд', 'character' => 'ZAR', 'code' => 710],
+                ['name' => 'Седи', 'character' => 'GHS', 'code' => 936],
+                ['name' => 'Соль новый', 'character' => 'PEN', 'code' => 604],
+                ['name' => 'Сом', 'character' => 'KGS', 'code' => 417],
+                ['name' => 'Сомони', 'character' => 'TJS', 'code' => 972],
+                ['name' => 'Сум', 'character' => 'UZS', 'code' => 860],
+                ['name' => 'Така', 'character' => 'BDT', 'code' => 50],
+                ['name' => 'Тала', 'character' => 'WST', 'code' => 882],
+                ['name' => 'Тенге', 'character' => 'KZT', 'code' => 398],
+                ['name' => 'Тугрик', 'character' => 'MNT', 'code' => 496],
+                ['name' => 'Угия', 'character' => 'MRO', 'code' => 478],
+                ['name' => 'Флорин', 'character' => 'AWG', 'code' => 533],
+                ['name' => 'Форинт', 'character' => 'HUF', 'code' => 348],
+                ['name' => 'Франк', 'character' => 'BIF', 'code' => 108],
+                ['name' => 'Франк', 'character' => 'GNF', 'code' => 324],
+                ['name' => 'Франк', 'character' => 'DJF', 'code' => 262],
+                ['name' => 'Франк', 'character' => 'KMF', 'code' => 174],
+                ['name' => 'Франк', 'character' => 'CDF', 'code' => 976],
+                ['name' => 'Франк', 'character' => 'RWF', 'code' => 646],
+                ['name' => 'Франк', 'character' => 'CHF', 'code' => 756],
+                ['name' => 'Франк КПФ', 'character' => 'XPF', 'code' => 953],
+                ['name' => 'Франк КФА', 'character' => 'XOF', 'code' => 952],
+                ['name' => 'Франк КФА', 'character' => 'XAF', 'code' => 950],
+                ['name' => 'Фунт стерлингов', 'character' => 'GBP', 'code' => 826],
+                ['name' => 'Фунт', 'character' => 'GIP', 'code' => 292],
+                ['name' => 'Фунт', 'character' => 'EGP', 'code' => 818],
+                ['name' => 'Фунт', 'character' => 'LBP', 'code' => 422],
+                ['name' => 'Фунт', 'character' => 'SHP', 'code' => 654],
+                ['name' => 'Фунт', 'character' => 'SYP', 'code' => 760],
+                ['name' => 'Фунт', 'character' => 'SDG', 'code' => 938],
+                ['name' => 'Фунт', 'character' => 'FKP', 'code' => 238],
+                ['name' => 'Шекель новый', 'character' => 'ILS', 'code' => 376],
+                ['name' => 'Шиллинг', 'character' => 'KES', 'code' => 404],
+                ['name' => 'Шиллинг', 'character' => 'SOS', 'code' => 706],
+                ['name' => 'Шиллинг', 'character' => 'TZS', 'code' => 834],
+                ['name' => 'Шиллинг', 'character' => 'UGX', 'code' => 800],
+                ['name' => 'Эскудо', 'character' => 'CVE', 'code' => 132],
+                ['name' => 'Юань', 'character' => 'CNY', 'code' => 156],
+            ]
+        );
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('nss_currencies');
+    }
+}
